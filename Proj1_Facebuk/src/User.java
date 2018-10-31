@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.awt.Image;
-import java.util.Set;
 
 public class User {
     private String _name;
