@@ -58,7 +58,7 @@ public class User extends Profile {
         int idxBestFriend = -1;
         double bestAvgSmileValue = -1.0;
         for (int j = 0; j < nFriends; j++) {
-            double currentAvgSmileValue = friendsSumHappiness[j]/friendsSumOfMoments[j]
+            double currentAvgSmileValue = friendsSumHappiness[j]/friendsSumOfMoments[j];
             if (bestAvgSmileValue < currentAvgSmileValue) {
                 bestAvgSmileValue = currentAvgSmileValue;
                 idxBestFriend = j;

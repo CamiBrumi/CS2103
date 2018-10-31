@@ -7,7 +7,7 @@ public class Profile {
         _image = image;
     }
 
-    boolean equals (Object o){
+    public boolean equals (Object o){
         return _name.equals(((Profile) o)._name);
     }
 }
