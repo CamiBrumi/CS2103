@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class User {
+public class User extends Profile {
     private String _name;
     private Image _image;
     private ArrayList _friends; //those are of type User
@@ -26,6 +26,39 @@ public class User {
     void addFriend (User friend) {
         _friends.add(friend);
     }
+
+
+
+    // returns either a Person or a Pet -- with whom person p appears the most happy on average,
+    // over all the moments in which both p and her/his friend f participate.
+    // If person p has no friends with whom she/he appears in the same moment, then return null.
+    User getFriendWithWhomIAmHappiest () {
+        int nFriends = _friends.size();
+        int nMoments = _moments.size();
+
+        // in the next two arrays, each position of each array represents a friend
+        // friendSumHappiness contains the sum of the levels of happiness of every friend over all the moments
+        float[] friendsSumHappiness = new float[nFriends];
+
+        // friendsSumOfMoments contains the number of moments each friend participated in
+        int[] friendsSumOfMoments = new int[nFriends];
+
+        for (int i = 0; i < nMoments; i++) {
+            Moment m = (Moment) _moments.get(i);
+            for (int j = 0; j < nFriends; j++) {
+                if (m.getParticipants().contains(_friends.get(j))) { // if statement that evaluates whether the friend j is in the moment i
+                    friendsSumHappiness[j] =
+                }
+            }
+        }
+
+        // so, since we have the happiness of each friend and the number of events they were attending, we can compute an average of their happiness
+    }
+
+    Moment getOverallHappiestMoment () {
+
+    }
+
 
     public ArrayList findMaximumCliqueOfFriends() {
         ArrayList clique = new ArrayList();

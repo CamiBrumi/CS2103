@@ -8,4 +8,12 @@ public class Person extends User {
     public Person(String name, Image image) {
         super(name, image);
     }
+
+    void setPossessions (ArrayList possessions) {
+        _possessions = possessions;
+    }
+
+    void setPets (ArrayList pets) {
+        _pets = pets;
+    }
 }

@@ -1,21 +1,21 @@
-import java.awt.*;
 import java.util.ArrayList;
 
-public class Moment {
-    private String _name;
-    private Image _image;
+public class Moment extends Profile {
     private ArrayList _participants;
     private ArrayList _smileValues;
 
     public Moment (String name, Image image, ArrayList participants, ArrayList smileValues) {
-        _name = name;
-        _image = image;
+        super(name, image);
         _participants = participants;
         _smileValues = smileValues;
     }
 
-
-    private boolean equals (Object o){
-        return _name.equals(o.name); //todo how to I implement this??
+    public ArrayList getParticipants() {
+        return _participants;
     }
+
+    ArrayList getSmileValues() {
+        return _smileValues;
+    }
+
 }
