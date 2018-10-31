@@ -18,4 +18,14 @@ public class Moment extends Profile {
         return _smileValues;
     }
 
+
+    public double getHappinessScore() {
+        int nSmiles = _smileValues.size();
+        double sum = 0;
+        for (int i = 0; i < nSmiles; ++i) {
+            sum += (double)_smileValues.get(i);
+        }
+        return sum/nSmiles;
+    }
+
 }

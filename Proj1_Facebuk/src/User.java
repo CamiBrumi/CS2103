@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 
 public class User extends Profile {
-    private String _name;
-    private Image _image;
     private ArrayList _friends; //those are of type User
     private ArrayList _moments; //those are of type Moment
 
+
     public User (String name, Image image) {
-        _name = name;
-        _image = image;
+        super(name, image);
     }
 
     void setFriends (ArrayList friends) {
@@ -38,25 +36,55 @@ public class User extends Profile {
 
         // in the next two arrays, each position of each array represents a friend
         // friendSumHappiness contains the sum of the levels of happiness of every friend over all the moments
-        float[] friendsSumHappiness = new float[nFriends];
+        double[] friendsSumHappiness = new double[nFriends];
 
         // friendsSumOfMoments contains the number of moments each friend participated in
         int[] friendsSumOfMoments = new int[nFriends];
 
+        for (int j = 0; j < nFriends; j++) {
+            friendsSumHappiness[j] = 0;
+            friendsSumOfMoments[j] = 0;
+        }
         for (int i = 0; i < nMoments; i++) {
             Moment m = (Moment) _moments.get(i);
             for (int j = 0; j < nFriends; j++) {
-                if (m.getParticipants().contains(_friends.get(j))) { // if statement that evaluates whether the friend j is in the moment i
-                    friendsSumHappiness[j] =
+                int idxFriend = m.getParticipants().indexOf(_friends.get(j));
+                if (idxFriend != -1) { // if statement that evaluates whether the friend j is in the moment i
+                    friendsSumHappiness[j] += (double) m.getSmileValues().get(idxFriend);
+                    ++friendsSumOfMoments[j];
                 }
             }
         }
-
+        int idxBestFriend = -1;
+        double bestAvgSmileValue = -1.0;
+        for (int j = 0; j < nFriends; j++) {
+            double currentAvgSmileValue = friendsSumHappiness[j]/friendsSumOfMoments[j]
+            if (bestAvgSmileValue < currentAvgSmileValue) {
+                bestAvgSmileValue = currentAvgSmileValue;
+                idxBestFriend = j;
+            }
+        }
+        if (idxBestFriend == -1)
+            return null;
+        else
+            return (User)_friends.get(idxBestFriend);
         // so, since we have the happiness of each friend and the number of events they were attending, we can compute an average of their happiness
     }
 
     Moment getOverallHappiestMoment () {
-
+        int nMoments = _moments.size();
+        if (nMoments == 0) return null;
+        Moment happiestMoment = (Moment) _moments.get(0);
+        double highestHappinessScore = happiestMoment.getHappinessScore();
+        for (int i = 1; i < nMoments; ++i) {
+            Moment m = (Moment) _moments.get(i);
+            double happinessScore = m.getHappinessScore();
+            if (happinessScore > highestHappinessScore) {
+                highestHappinessScore = happinessScore;
+                happiestMoment = m;
+            }
+        }
+        return happiestMoment;
     }
 
 

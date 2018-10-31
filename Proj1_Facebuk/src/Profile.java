@@ -8,7 +8,7 @@ public class Profile {
     }
 
     boolean equals (Object o){
-        return _name.equals(); //todo how to I implement this??
+        return _name.equals(((Profile) o)._name);
     }
 }
 
