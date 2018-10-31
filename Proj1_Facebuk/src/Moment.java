@@ -4,10 +4,10 @@ import java.util.ArrayList;
 public class Moment {
     private String _name;
     private Image _image;
-    private ArrayList<User> _participants;
-    private ArrayList<Float> _smileValues;
+    private ArrayList _participants;
+    private ArrayList _smileValues;
 
-    public Moment (String name, Image image, ArrayList<User> participants, ArrayList<Float> smileValues) {
+    public Moment (String name, Image image, ArrayList participants, ArrayList smileValues) {
         _name = name;
         _image = image;
         _participants = participants;
@@ -15,5 +15,7 @@ public class Moment {
     }
 
 
-    private boolean equals (Object o);
+    private boolean equals (Object o){
+        return _name.equals(o.name); //todo how to I implement this??
+    }
 }
