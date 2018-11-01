@@ -236,7 +236,64 @@ public class FacebukPartialTester {
         friendRequest.approve(person3);
     }
 
-    // TODO: write more methods to test addFriend
+
+
+    // TODO: write more methods to test addFri    // TODO: write more methods to test addFriend
+    @Test
+    public void testAddFriend1 () {
+
+       // for (int i = 0; i < _michelle.getFriends().size(); i++) {
+       //     System.out.print(" " + _michelle.getFriends().get(i).get);
+       // }_
+         _michelle.addFriend(_tom);
+       // for (int i = 0; i < _michelle.getFriends().size(); i++) {
+       //     System.out.print(" " + _michelle.getFriends().get(i));
+       // }
+       // System.out.println("---------------------");
+        assertEquals(_michelle.getFriends().contains(_tom), true);
+        assertEquals(_tom.getFriends().contains(_michelle), false);
+
+        /*
+        assertEquals(_ivana.getFriends().contains(_marlon), false);
+        _ivana.addFriend(_marlon);
+        assertEquals(_ivana.getFriends().contains(_marlon), true); */
+    }
+
+
+    @Test
+    public void testAddFriend2 () {
+        assertEquals(_ivana.getFriends().contains(_marlon), false);
+        _ivana.addFriend(_marlon);
+        assertEquals(_ivana.getFriends().contains(_marlon), true);
+    }
+
+
+    // TODO: write more methods to test approve
+    @Test
+    public void testApprove () {
+        FriendRequest frKevinSunny = new FriendRequest(_kevin, _sunny);
+        assertEquals(_kevin.getFriends().contains(_sunny), false);
+        assertEquals(_sunny.getFriends().contains(_kevin), false);
+        frKevinSunny.approve(_kevin);
+        assertEquals(_kevin.getFriends().contains(_sunny), false);
+        assertEquals(_sunny.getFriends().contains(_kevin), false);
+        frKevinSunny.approve(_sunny);
+        assertEquals(_kevin.getFriends().contains(_sunny), true);
+        assertEquals(_sunny.getFriends().contains(_kevin), true);
+    }
+
+    // TODO: write more methods to test getFriendWithWhomIAmHappiest
+
+    public void testGetFriendWithWhomIAmHappiest2 () {
+        assertEquals(_barack.getFriendWithWhomIAmHappiest(), _michelle);
+        assertEquals(_malia.getFriendWithWhomIAmHappiest(), _bo);
+    }
+
+    // TODO: write more methods to test getOverallHappiestMoment
+    @Test
+    public void testGetOverallHappiestMoment () {
+        assertEquals(_barack.getOverallHappiestMoment(), _meAndBarack);
+    }
     // TODO: write more methods to test approve
 
     // TODO: write more methods to test getFriendWithWhomIAmHappiest
@@ -245,10 +302,20 @@ public class FacebukPartialTester {
     // TODO: write methods to test isClique
     // TODO: write methods to test findMaximumCliqueOfFriends
 
+
+    @Test
+    public void testIsClique () {
+        ArrayList clique = new ArrayList();
+        clique.add(_ivana);
+        clique.add(_kevin);
+        clique.add(_hillary);
+        assertEquals(User.isClique((clique)), true);
+    }
+
     //checking whether the returned set by findMaximumCliqueOfFriends does not contain the person on which the method was
     //called
     @Test
-    public void testClique () {
+    public void testFindMaximumCliqueOfFriends () {
         ArrayList maxClique = _melania.findMaximumCliqueOfFriends();
         for (int i = 0; i < maxClique.size(); ++i) {
             System.out.println(((User) maxClique.get(i)).getName());
