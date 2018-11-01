@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932cd2b6-7929-45e4-9c18-68538c53ee7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FacebukPartialTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FacebukPartialTester.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,14 +57,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4737" />
-          <entry key="txt" value="347" />
+          <entry key="java" value="6500" />
+          <entry key="txt" value="374" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4737" />
-          <entry key="PLAIN_TEXT" value="347" />
+          <entry key="JAVA" value="6500" />
+          <entry key="PLAIN_TEXT" value="374" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -126,10 +129,12 @@
         <entry file="file://$PROJECT_DIR$/src/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="e#213#214#0" expanded="true" />
                 <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#307#308#0" expanded="true" />
+                <element signature="e#335#336#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1840">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="115">
+              <caret line="127" column="4" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
               <folding>
                 <element signature="e#300#301#0" expanded="true" />
                 <element signature="e#335#336#0" expanded="true" />
@@ -151,8 +156,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/FacebukPartialTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+            <state relative-caret-position="447">
+              <caret line="257" column="27" selection-start-line="257" selection-start-column="27" selection-end-line="257" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5098#5099#0" expanded="true" />
@@ -227,9 +232,9 @@
         <option value="$PROJECT_DIR$/src/Possession.java" />
         <option value="$PROJECT_DIR$/src/Pet.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
-        <option value="$PROJECT_DIR$/src/Profile.java" />
         <option value="$PROJECT_DIR$/src/FriendRequest.java" />
         <option value="$PROJECT_DIR$/src/Moment.java" />
+        <option value="$PROJECT_DIR$/src/Profile.java" />
         <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/test/FacebukPartialTester.java" />
       </list>
@@ -290,7 +295,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541035081546" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541039183471" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -411,29 +416,45 @@
       <option name="project" value="LOCAL" />
       <updated>1541034873563</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="No need to track workspace.">
+      <created>1541035115180</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541035115180</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 17h 35m 13s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 21h 26m 03s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 17h 40m 45s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 21h 32m 39s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 20h 43m 03s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 09m 07s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 20h 46m 07s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 09m 34s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 20h 47m 17s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 15m 23s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 20h 48m 07s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 16m 27s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FacebukPartialTester - 2018.10.31 at 21h 07m 20s.xml">
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 16m 49s.xml">
+      <configuration name="FacebukPartialTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 18m 18s.xml">
+      <configuration name="FacebukPartialTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 20m 30s.xml">
+      <configuration name="FacebukPartialTester" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FacebukPartialTester - 2018.10.31 at 22h 21m 09s.xml">
       <configuration name="FacebukPartialTester" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -442,8 +463,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4981685" visible="true" weight="0.18815717" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4981685" visible="true" weight="0.18815717" />
       <window_info id="Structure" order="1" sideWeight="0.50183153" side_tool="true" weight="0.1886657" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -452,7 +474,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32792208" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32792208" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -487,7 +509,8 @@
     <MESSAGE value="Finished the function that computes the vest friend as well." />
     <MESSAGE value="Tot proiectul compileaza bine!" />
     <MESSAGE value="Prof provided tests work. Now creating some new ones." />
-    <option name="LAST_COMMIT_MESSAGE" value="Prof provided tests work. Now creating some new ones." />
+    <MESSAGE value="No need to track workspace." />
+    <option name="LAST_COMMIT_MESSAGE" value="No need to track workspace." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/HelloWorld.java" />
@@ -541,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FriendRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Possession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -577,18 +593,27 @@
     <entry file="file://$PROJECT_DIR$/src/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#213#214#0" expanded="true" />
             <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FriendRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="115">
+          <caret line="127" column="4" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
           <folding>
             <element signature="e#300#301#0" expanded="true" />
             <element signature="e#335#336#0" expanded="true" />
@@ -598,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/FacebukPartialTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        <state relative-caret-position="447">
+          <caret line="257" column="27" selection-start-line="257" selection-start-column="27" selection-end-line="257" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5098#5099#0" expanded="true" />

@@ -10,5 +10,8 @@ public class Profile {
     public boolean equals (Object o){
         return _name.equals(((Profile) o)._name);
     }
+    public String getName () {
+        return _name;
+    }
 }
 

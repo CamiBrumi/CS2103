@@ -47,7 +47,6 @@ public class FacebukPartialTester {
         _charlotte = new Person("Charlotte", new Image("Charlotte.png"));
 
 
-        private Person _robin, _humphrey, _tom, _charlotte;
     }
 
     private void initPets () {
@@ -140,6 +139,16 @@ public class FacebukPartialTester {
         hillaryFriends.add(_ivana);
         hillaryFriends.add(_kevin);
         hillaryFriends.add(_robin);
+
+        _melania.setFriends(melaniaFriends);
+        _marlon.setFriends(marlonFriends);
+        _ivana.setFriends(ivanaFriends);
+        _kevin.setFriends(kevinFriends);
+        _hillary.setFriends(hillaryFriends);
+        _robin.setFriends(new ArrayList());
+        _humphrey.setFriends(new ArrayList());
+        _tom.setFriends(new ArrayList());
+        _charlotte.setFriends(new ArrayList());
 
     }
 
@@ -240,7 +249,17 @@ public class FacebukPartialTester {
     //called
     @Test
     public void testClique () {
-        System.out.println(_melania.findMaximumCliqueOfFriends());
+        ArrayList maxClique = _melania.findMaximumCliqueOfFriends();
+        for (int i = 0; i < maxClique.size(); ++i) {
+            System.out.println(((User) maxClique.get(i)).getName());
+        }
+        ArrayList correctClique = new ArrayList();
+        correctClique.add(_ivana);
+        correctClique.add(_kevin);
+        correctClique.add(_hillary);
+
+        assertEquals(maxClique.containsAll(correctClique), true);
+        assertEquals(correctClique.containsAll(maxClique), true);
         //assertEquals(_melania.findMaximumCliqueOfFriends().contains(_melania), false);
         //assertEquals(_melania, _melania);
     }

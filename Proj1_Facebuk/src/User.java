@@ -87,24 +87,64 @@ public class User extends Profile {
         return happiestMoment;
     }
 
+    //I assume that friendship is symmetric
+    public static boolean isClique(ArrayList set) {
+        if (set.isEmpty())
+            return true;
+        else {
+            for (int friendIdx = 0; friendIdx < set.size(); ++friendIdx) {
+                boolean foundIncompatibility = false;
+                for (int friendIdx2 = friendIdx + 1; friendIdx2 < set.size() && !foundIncompatibility; ++friendIdx2) {
+                    User validatingFriend = (User) set.get(friendIdx2);
+                    foundIncompatibility = !validatingFriend.getFriends().contains(set.get(friendIdx));
+                }
+                if (foundIncompatibility)
+                    return false;
+            }
+            return true;
+        }
+
+    }
+
+    private ArrayList findMaxClique(ArrayList selectedFriends, int elemConsidered) {
+        if (elemConsidered >= _friends.size() && isClique(selectedFriends)) {
+            return selectedFriends;
+        } else if (elemConsidered >= _friends.size())
+            return new ArrayList(); //a clique was not found
+        else { //still some more friends must decided if they go into the clique
+            ArrayList maxClique1 = (ArrayList) findMaxClique(selectedFriends, elemConsidered + 1).clone();
+
+            selectedFriends.add(_friends.get(elemConsidered));
+            ArrayList maxClique2 = (ArrayList) findMaxClique(selectedFriends, elemConsidered + 1).clone();
+            selectedFriends.remove(selectedFriends.size() - 1);
+
+
+            if (maxClique1.size() > maxClique2.size())
+                return maxClique1;
+            else return maxClique2;
+        }
+    }
 
     public ArrayList findMaximumCliqueOfFriends() {
-        ArrayList clique = new ArrayList();
-        //for each friend f1 we select for this User, it must be contained
-        //in the list of friends of all the other friends of this user
-        System.out.println("Hola1");
-        for (int friendIdx = 0; friendIdx < _friends.size(); ++friendIdx) {
-            System.out.println("Hola3");
-            boolean foundIncompatibility = false;
-            for (int friendIdx2 = friendIdx + 1; friendIdx2 < _friends.size() && !foundIncompatibility; ++friendIdx2) {
-                User validatingFriend = (User) _friends.get(friendIdx2);
-                foundIncompatibility = !validatingFriend.getFriends().contains(_friends.get(friendIdx));
-            }
-            if (!foundIncompatibility)
-                clique.add(_friends.get(friendIdx));
-        }
-        System.out.println("Hola2");
+        ArrayList clique = findMaxClique(new ArrayList(), 0);
         return clique;
+
+        //    ArrayList clique = new ArrayList();
+    //    //for each friend f1 we select for this User, it must be contained
+    //    //in the list of friends of all the other friends of this user
+    //    System.out.println("Hola1");
+    //    for (int friendIdx = 0; friendIdx < _friends.size(); ++friendIdx) {
+    //        System.out.println("Hola3");
+    //        boolean foundIncompatibility = false;
+    //        for (int friendIdx2 = friendIdx + 1; friendIdx2 < _friends.size() && !foundIncompatibility; ++friendIdx2) {
+    //            User validatingFriend = (User) _friends.get(friendIdx2);
+    //            foundIncompatibility = !validatingFriend.getFriends().contains(_friends.get(friendIdx));
+    //        }
+    //        if (!foundIncompatibility)
+    //            clique.add(_friends.get(friendIdx));
+    //    }
+    //    System.out.println("Hola2");
+    //    return clique;
     }
 
 
