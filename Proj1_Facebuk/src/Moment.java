@@ -19,11 +19,11 @@ public class Moment extends Profile {
     }
 
 
-    public double getHappinessScore() {
+    public float getHappinessScore() {
         int nSmiles = _smileValues.size();
-        double sum = 0;
+        float sum = 0;
         for (int i = 0; i < nSmiles; ++i) {
-            sum += (double)_smileValues.get(i);
+            sum += (float)_smileValues.get(i);
         }
         return sum/nSmiles;
     }

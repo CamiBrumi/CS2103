@@ -36,7 +36,7 @@ public class User extends Profile {
 
         // in the next two arrays, each position of each array represents a friend
         // friendSumHappiness contains the sum of the levels of happiness of every friend over all the moments
-        double[] friendsSumHappiness = new double[nFriends];
+        float[] friendsSumHappiness = new float[nFriends];
 
         // friendsSumOfMoments contains the number of moments each friend participated in
         int[] friendsSumOfMoments = new int[nFriends];
@@ -50,15 +50,15 @@ public class User extends Profile {
             for (int j = 0; j < nFriends; j++) {
                 int idxFriend = m.getParticipants().indexOf(_friends.get(j));
                 if (idxFriend != -1) { // if statement that evaluates whether the friend j is in the moment i
-                    friendsSumHappiness[j] += (double) m.getSmileValues().get(idxFriend);
+                    friendsSumHappiness[j] += (float) m.getSmileValues().get(idxFriend);
                     ++friendsSumOfMoments[j];
                 }
             }
         }
         int idxBestFriend = -1;
-        double bestAvgSmileValue = -1.0;
+        float bestAvgSmileValue = -1.0f;
         for (int j = 0; j < nFriends; j++) {
-            double currentAvgSmileValue = friendsSumHappiness[j]/friendsSumOfMoments[j];
+            float currentAvgSmileValue = friendsSumHappiness[j]/friendsSumOfMoments[j];
             if (bestAvgSmileValue < currentAvgSmileValue) {
                 bestAvgSmileValue = currentAvgSmileValue;
                 idxBestFriend = j;
@@ -75,10 +75,10 @@ public class User extends Profile {
         int nMoments = _moments.size();
         if (nMoments == 0) return null;
         Moment happiestMoment = (Moment) _moments.get(0);
-        double highestHappinessScore = happiestMoment.getHappinessScore();
+        float highestHappinessScore = happiestMoment.getHappinessScore();
         for (int i = 1; i < nMoments; ++i) {
             Moment m = (Moment) _moments.get(i);
-            double happinessScore = m.getHappinessScore();
+            float happinessScore = m.getHappinessScore();
             if (happinessScore > highestHappinessScore) {
                 highestHappinessScore = happinessScore;
                 happiestMoment = m;
@@ -92,7 +92,9 @@ public class User extends Profile {
         ArrayList clique = new ArrayList();
         //for each friend f1 we select for this User, it must be contained
         //in the list of friends of all the other friends of this user
+        System.out.println("Hola1");
         for (int friendIdx = 0; friendIdx < _friends.size(); ++friendIdx) {
+            System.out.println("Hola3");
             boolean foundIncompatibility = false;
             for (int friendIdx2 = friendIdx + 1; friendIdx2 < _friends.size() && !foundIncompatibility; ++friendIdx2) {
                 User validatingFriend = (User) _friends.get(friendIdx2);
@@ -101,6 +103,7 @@ public class User extends Profile {
             if (!foundIncompatibility)
                 clique.add(_friends.get(friendIdx));
         }
+        System.out.println("Hola2");
         return clique;
     }
 

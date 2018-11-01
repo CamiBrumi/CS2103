@@ -12,6 +12,8 @@ import java.util.ArrayList;
  */
 public class FacebukPartialTester {
     private Person _barack, _michelle, _kevin, _ina, _joe, _malia;
+    private Person _melania, _marlon, _ivana, _hillary;
+    private Person _robin, _humphrey, _tom, _charlotte;
     private Pet _bo, _sunny;
     private Moment _meAndBarack;
     private ArrayList _michelleAndBarack, _michelleJoeBoAndMalia;
@@ -32,6 +34,20 @@ public class FacebukPartialTester {
         _ina = new Person("Ina", new Image("Ina.png"));
         _joe = new Person("Joe", new Image("Joe.png"));
         _malia = new Person("Malia", new Image("Malia.png"));
+
+
+        _melania = new Person("Melania", new Image("Melania.png"));
+        _marlon = new Person("Marlon", new Image("Marlon.png"));
+        _ivana = new Person("Ivana", new Image("Ivana.png"));
+        _kevin = new Person("Kevin", new Image("Kevin.png"));
+        _hillary = new Person("Hillary", new Image("Hillary.png"));
+        _robin = new Person("Robin", new Image("Robin.png"));
+        _humphrey = new Person("Humphrey", new Image("Humphrey.png"));
+        _tom = new Person("Tom", new Image("Tom.png"));
+        _charlotte = new Person("Charlotte", new Image("Charlotte.png"));
+
+
+        private Person _robin, _humphrey, _tom, _charlotte;
     }
 
     private void initPets () {
@@ -89,6 +105,42 @@ public class FacebukPartialTester {
         boAndSunny.add(_bo);
         boAndSunny.add(_sunny);
         _michelle.setPets(boAndSunny);
+
+        //melania
+        final ArrayList melaniaFriends = new ArrayList();
+        melaniaFriends.add(_ivana);
+        melaniaFriends.add(_kevin);
+        melaniaFriends.add(_hillary);
+        melaniaFriends.add(_marlon);
+
+        final ArrayList marlonFriends = new ArrayList();
+        marlonFriends.add(_melania);
+        marlonFriends.add(_charlotte);
+        marlonFriends.add(_kevin);
+        marlonFriends.add(_humphrey);
+
+
+        final ArrayList ivanaFriends = new ArrayList();
+        ivanaFriends.add(_melania);
+        ivanaFriends.add(_tom);
+        ivanaFriends.add(_hillary);
+        ivanaFriends.add(_kevin);
+
+
+        final ArrayList kevinFriends = new ArrayList();
+        kevinFriends.add(_melania);
+        kevinFriends.add(_marlon);
+        kevinFriends.add(_robin);
+        kevinFriends.add(_hillary);
+        kevinFriends.add(_humphrey);
+        kevinFriends.add(_ivana);
+
+        final ArrayList hillaryFriends = new ArrayList();
+        hillaryFriends.add(_melania);
+        hillaryFriends.add(_ivana);
+        hillaryFriends.add(_kevin);
+        hillaryFriends.add(_robin);
+
     }
 
     private void initPossessions () {
@@ -183,4 +235,14 @@ public class FacebukPartialTester {
 
     // TODO: write methods to test isClique
     // TODO: write methods to test findMaximumCliqueOfFriends
+
+    //checking whether the returned set by findMaximumCliqueOfFriends does not contain the person on which the method was
+    //called
+    @Test
+    public void testClique () {
+        System.out.println(_melania.findMaximumCliqueOfFriends());
+        //assertEquals(_melania.findMaximumCliqueOfFriends().contains(_melania), false);
+        //assertEquals(_melania, _melania);
+    }
+
 }
